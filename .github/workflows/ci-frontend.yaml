@@ -28,11 +28,16 @@ jobs:
           cache-dependency-path: '${{ env.frontend-path }}/package-lock.json'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli > /dev/null
       
       - name: Build project
-        run: ng build
+        run: npm run build:ci:prod
       
       - name: Test project
-        id: node-test
-        run: ng test --watch=false --browsers=ChromeHeadless
+        run: npm run test:ci
+      
+      - name: Test project code coverage
+        run: npm run test:ci:coverage
