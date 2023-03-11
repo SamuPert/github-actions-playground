@@ -14,10 +14,10 @@ jobs:
         working-directory: tour-of-heroes
 
     steps:
-      - run: pwd
-      
       - name: Check out code
         uses: actions/checkout@v3
+
+      - run: pwd
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
