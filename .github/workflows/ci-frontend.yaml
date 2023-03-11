@@ -4,8 +4,13 @@ on:
   pull_request:
     branches: [ main ]
 
+    
+defaults:
+  run:
+    working-directory: ./tour-of-heroes
+
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
